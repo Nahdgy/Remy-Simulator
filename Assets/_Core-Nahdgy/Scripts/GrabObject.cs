@@ -12,19 +12,26 @@ public class GrabObject : MonoBehaviour
     [SerializeField] 
     private bool _hasPlayer = false, _beingCarried = false, _touched = false;
 
+    [SerializeField]
+    private int _remy = 6;
+    [SerializeField]
+    private GameObject _grabUI, _goUI;
+    
+   
 
-
-    private void Update()
+    public void Update()
     {
        float _dist = Vector2.Distance(gameObject.transform.position, _player.position); 
 
         if(_dist <= 1.9f)
         {
             _hasPlayer = true;
+            _grabUI.SetActive(true);
         }
         else
         {
             _hasPlayer = false;
+            _grabUI.SetActive(false);
         }
 
         if(_hasPlayer == true && Input.GetButtonDown("Hold"))
@@ -37,7 +44,8 @@ public class GrabObject : MonoBehaviour
 
         if(_beingCarried)
         {
-            if(_touched) 
+            _goUI.SetActive(true);
+            if (_touched) 
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
@@ -51,23 +59,27 @@ public class GrabObject : MonoBehaviour
                 transform.parent = null;
                 _beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(_playerCam.forward * _throwForce);
+                _goUI.SetActive(false);
             }
 
             else if(Input.GetButtonUp("Hold"))
-            {
+            {   
+                _goUI.SetActive(false);
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 _beingCarried = false;
+               
             }
         }
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
         if(_beingCarried)
         {
             _touched = true;
         }
-        
-    }
+       
+    } 
+   
 }

@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BillBordFire : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private Camera _cam;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.LookAt(_cam.transform);
     }
 }

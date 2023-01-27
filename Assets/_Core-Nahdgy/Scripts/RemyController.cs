@@ -5,22 +5,27 @@ using UnityEngine;
 public class RemyController : MonoBehaviour
 {
     [SerializeField]
-    private float _moveSpeed,_jumpForce,_playerHeight,_speedDrag,_moveMultiplier;
-    private float _horizontalInput,_jumpCooldown,_verticalInput, _jumpInput;
+    private float _moveSpeed, _runSpeed, _jumpForce, _playerHeight,_speedDrag,_moveMultiplier,_climbSpeed,_dashDuration, _initialSpeed;
+    private float _horizontalInput,_jumpCooldown,_verticalInput, _jumpInput ;
  
     [SerializeField]
-    private bool _isGrounded,_canJump;
+    private bool _isGrounded,_canJump, _canClimb;
 
+    [SerializeField]
+    private int _ladder = 7;
    
     [SerializeField]
     private LayerMask _whatIsGround;
     [SerializeField]
-    private Vector3 _moveDirection;
+    private Vector3 _moveDirection, _velocity = Vector3.zero;
+   
 
     [SerializeField]
     private Rigidbody _rb;
     [SerializeField]
-    private Transform _oriantation;
+    private Transform _oriantation, _player;
+    [SerializeField]
+    private GameObject _climbUI;
     
 
    
@@ -29,7 +34,9 @@ public class RemyController : MonoBehaviour
     {
        _rb = GetComponent<Rigidbody>();
        _rb.freezeRotation = true;
-      
+       _initialSpeed = _moveSpeed;
+
+
     }
 
     private void FixedUpdate()
@@ -48,6 +55,22 @@ public class RemyController : MonoBehaviour
            Invoke(nameof(JumpYouCan), _jumpCooldown);
            
         }
+    } 
+    private void Dash()
+    {
+        if(Input.GetButton("Boost"))
+        {
+            Debug.Log("run");
+            StartCoroutine(BoostTimer());       
+        }
+    }
+    private IEnumerator BoostTimer()
+    {
+       _moveSpeed = _runSpeed; 
+        yield return new WaitForSeconds(_dashDuration);
+        Debug.Log("retour");
+        _moveSpeed = _initialSpeed;
+        yield return new WaitForSeconds(_dashDuration);
     }
     void GroundCheck()
     {
@@ -87,12 +110,48 @@ public class RemyController : MonoBehaviour
             _rb.velocity = new Vector3(_limitVel.x, _rb.velocity.y, _limitVel.z);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == _ladder)
+        {
+            _climbUI.SetActive(true);
+            _canClimb = true;
+        }      
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == _ladder)
+        {
+            _climbUI.SetActive(false);
+            _canClimb = false;
+        }
+
+
+    }
+
+    private void Climb(float _climbMovement)
+    {
+        if(Input.GetButton("Climb") && _canClimb == true)
+        {
+            
+            _moveDirection = _player.up * _climbSpeed;
+            _rb.AddForce(_moveDirection.normalized * _climbSpeed, ForceMode.Force);
+        }
+
+    }
+
+   
+
     private void Update()
     {
         ControllerInputs();
         GroundCheck();
         LimitVelocity();
         SetDrag();
+        float _climbMovement = Input.GetAxis("Vertical") * _moveSpeed;
+        Climb( _climbMovement );
+        Dash();
     }
 
 }
