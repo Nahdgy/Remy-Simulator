@@ -134,7 +134,6 @@ public class RemyController : MonoBehaviour
     {
         if(Input.GetButton("Climb") && _canClimb == true)
         {
-            
             _moveDirection = _player.up * _climbSpeed;
             _rb.AddForce(_moveDirection.normalized * _climbSpeed, ForceMode.Force);
         }
