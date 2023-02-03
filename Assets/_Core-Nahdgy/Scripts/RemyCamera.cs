@@ -5,12 +5,19 @@ using UnityEngine;
 public class RemyCamera : MonoBehaviour
 {
     [SerializeField]
-    private float _mouseSensibilityX,_mouseSensibilityY;
+    private float _mouseSensibilityX, _mouseSensibilityY, _pickUpRange = 2.6f;
     private float _cameraRotationX, _cameraRotationY;
     [SerializeField]
     private Transform _oriantationCam;
+    [SerializeField]
+    private LayerMask _layerMask;
+    [SerializeField]
+    private GameObject _picUpUI;
+    public ItemBehavior _pickUp;
 
-    
+
+
+
      private void Start()
      {
         Cursor.lockState = CursorLockMode.Locked;
@@ -28,10 +35,32 @@ public class RemyCamera : MonoBehaviour
         transform.rotation = Quaternion.Euler(_cameraRotationX, _cameraRotationY, 0);
         _oriantationCam.rotation = Quaternion.Euler(0, _cameraRotationY, 0);
     }
-   
+    private void ObjectTargeted()
+    {
+        RaycastHit _hit;
+        if (Physics.Raycast(transform.position, transform.forward, out _hit, _pickUpRange, _layerMask))
+        {
+            if (_hit.transform.CompareTag("Item"))
+            {
+                _picUpUI.SetActive(true);
+                if (Input.GetButtonDown("Pick"))
+                {
+                    _pickUp.DoPickUp(_hit.transform.gameObject.GetComponent<Item>());
+
+                }
+            }
+        }
+        else 
+        {
+            _picUpUI.SetActive(false);
+        }
+
+    }
+
 
     private void Update()
     {
+        ObjectTargeted();
         GetMouseInput();
     }
 }
