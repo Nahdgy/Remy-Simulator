@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class innventory : MonoBehaviour
 {
     [SerializeField]
@@ -27,10 +28,17 @@ public class innventory : MonoBehaviour
 
         }
     }
-
     public bool IsFull()
     {
         return InventorySize == _content.Count;
+    }
+
+    public void CheckList()
+    {
+        for (int i = 0; i < _content[i]; i++)
+        {
+
+        }     
     }
 
 }

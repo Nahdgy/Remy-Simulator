@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ActionZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private int _player = 6;
+    [SerializeField]
+    private bool _isInside;
+    [SerializeField]
+    private Animator _animationZone;
+    [SerializeField]
+    private string _animNanme;
+    [SerializeField]
+    private ParticleSystemRenderer _color;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
