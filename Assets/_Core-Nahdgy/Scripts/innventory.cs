@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class innventory : MonoBehaviour
 {
-    [SerializeField]
-    private List<ItemData> _content = new List<ItemData>();
+    public List<ItemData> _content = new List<ItemData>();
     [SerializeField]
     private Transform _inventorySlotsParents;
+    
 
     const int InventorySize = 4;
-
-
 
     public void AddItem(ItemData item)
     {
@@ -32,11 +31,4 @@ public class innventory : MonoBehaviour
     {
         return InventorySize == _content.Count;
     }
-
-    public void CheckList()
-    {
-        //for (int i = 0; i < _content[i]; i++)
-          
-    }
-
 }
