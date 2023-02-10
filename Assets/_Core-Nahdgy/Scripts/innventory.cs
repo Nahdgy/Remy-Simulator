@@ -35,10 +35,8 @@ public class innventory : MonoBehaviour
 
     public void CheckList()
     {
-        for (int i = 0; i < _content[i]; i++)
-        {
-
-        }     
+        //for (int i = 0; i < _content[i]; i++)
+          
     }
 
 }
