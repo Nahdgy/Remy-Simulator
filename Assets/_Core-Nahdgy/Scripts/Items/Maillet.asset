@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Maillet
   _visual: {fileID: -358717987, guid: 74e459ddb7bcb844893de4f24b26e407, type: 3}
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 38570270323542006, guid: 7137aa50cf574de4fa80934f56e7d145, type: 3}
