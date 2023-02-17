@@ -46,6 +46,7 @@ public class ActionZone : MonoBehaviour
             _palyerHere = false;
             _particle.startColor = Color.white;
             _goPickUI.SetActive(false);
+            _UI.SetActive(false);
         }
     }
 

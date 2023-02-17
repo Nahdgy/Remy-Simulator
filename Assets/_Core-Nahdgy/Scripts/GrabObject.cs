@@ -21,16 +21,23 @@ public class GrabObject : MonoBehaviour
 
     public void Update()
     {
-       float _dist = Vector2.Distance(gameObject.transform.position, _player.position); 
+       float _dist = Vector2.Distance(gameObject.transform.position, _player.position);
 
-        if(_dist <= 1.9f)
+        if (_dist <= 5f && _dist >= 0.5f)
         {
             _hasPlayer = true;
-            _grabUI.SetActive(true);
         }
         else
         {
             _hasPlayer = false;
+        }
+        if (_hasPlayer)
+        { 
+            _grabUI.SetActive(true);
+            Debug.Log("UI is active");
+        }
+        else
+        {
             _grabUI.SetActive(false);
         }
 
