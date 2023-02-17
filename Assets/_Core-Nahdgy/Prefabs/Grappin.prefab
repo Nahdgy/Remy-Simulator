@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4981892881093970097}
   - component: {fileID: 5255607854199548079}
   - component: {fileID: 4618840649975042681}
+  - component: {fileID: 914374429}
   m_Layer: 8
   m_Name: Grappin
   m_TagString: Item
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2381005696619248302}
   m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -32.32837, y: 1.5826423, z: 42.845337}
-  m_LocalScale: {x: 0.042675674, y: 0.042675674, z: 0.042675674}
+  m_LocalScale: {x: 0.042675678, y: 0.04267568, z: 0.04267568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -150,3 +151,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &914374429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381005696619248302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33503ce907cf5948bbeb1a12224aa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objAnimation: {fileID: 4618840649975042681}
+  _animName: MiniGrappin

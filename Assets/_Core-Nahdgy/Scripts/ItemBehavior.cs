@@ -9,7 +9,7 @@ public class ItemBehavior : MonoBehaviour
     [SerializeField]
     private float _destroyTiming;
     [SerializeField]
-    public ObjectsAnim _animObj;
+    public ObjectsAnim[] _animObj;
 
     public void DoPickUp(Item _itemBehavior)
     {
@@ -18,7 +18,12 @@ public class ItemBehavior : MonoBehaviour
             return;
         }    
         _inventory.AddItem(_itemBehavior._itemData);
-        _animObj.ObjToPocket();
+
+        for (int i = 0; i < _animObj.Length; i++)
+        {
+            _animObj[i].ObjToPocket();
+        }
+        
         Destroy(_itemBehavior.gameObject, _destroyTiming);
 
         
