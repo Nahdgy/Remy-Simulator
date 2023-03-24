@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Grappin
   _visual: {fileID: -1348058143, guid: 6f3ba4a186aea8e41a582a5d59dca59d, type: 3}
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 2381005696619248302, guid: d15ac179717e07f45977927bbda3b5fd, type: 3}

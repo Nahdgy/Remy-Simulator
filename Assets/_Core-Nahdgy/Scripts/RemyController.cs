@@ -7,10 +7,10 @@ public class RemyController : MonoBehaviour
     [SerializeField]
     private float _moveSpeed, _runSpeed, _jumpForce, _playerHeight,_speedDrag,_moveMultiplier,_climbSpeed,_dashDuration, _initialSpeed;
     private float _horizontalInput,_jumpCooldown,_verticalInput, _jumpInput ;
- 
+    public float _gravityMultiplier;
     [SerializeField]
     private bool _isGrounded,_canJump, _canClimb;
-
+    
     [SerializeField]
     private int _ladder = 7;
    
@@ -139,8 +139,6 @@ public class RemyController : MonoBehaviour
         }
 
     }
-
-   
 
     private void Update()
     {
