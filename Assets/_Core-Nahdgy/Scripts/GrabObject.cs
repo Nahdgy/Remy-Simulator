@@ -58,6 +58,7 @@ public class GrabObject : MonoBehaviour
                 transform.parent = null;
                 _beingCarried = false;  
                 _touched= false;
+                _goUI.SetActive(false);
             }
 
             if(Input.GetButton("Shoot"))

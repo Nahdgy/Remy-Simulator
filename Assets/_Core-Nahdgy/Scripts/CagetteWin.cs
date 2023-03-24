@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CagetteWin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<GrabObject> legumes = new List<GrabObject>();
+    [SerializeField]
+    private UI winning;
+    [SerializeField] 
+    private int obj = 9;
+
+
+    private void Update()
     {
-        
+        GotVegetables();
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == obj)
+        {
+            Destroy(other.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GotVegetables()
     {
-        
+        legumes = FindObjectsOfType<GrabObject>().ToList();
+        if(legumes.Count == 0 ) 
+        {
+            winning.WinScene();
+        }
     }
 }

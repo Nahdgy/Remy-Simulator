@@ -1,19 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
-
-    [SerializeField]
-    private int _remy = 6;
-    [SerializeField]
-    private GameObject _actionUI;
-
-    private GrabObject _grabObject;
-
-    private void Update()
+    public void WinScene()
     {
-       
+        SceneManager.LoadScene("Win");
+    }
+
+    public void GameOverScene()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
