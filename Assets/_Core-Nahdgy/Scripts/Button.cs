@@ -11,7 +11,7 @@ public class Button : MonoBehaviour
     [SerializeField]
     private UI ui;
     [SerializeField]
-    private float easy = 120, normal = 60, difficult = 30;
+    private float easy, normal, difficult;
 
     public void PlayButton()
     {
