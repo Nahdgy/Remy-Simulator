@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -42,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,6 +64,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -115,6 +117,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -391,21 +405,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CREDITS_8: -630585395
-      CREDITS_6: -635655906
-      CREDITS_5: -2049739215
-      CREDITS_11: -1744906842
-      CREDITS_3: -1243153570
-      CREDITS_1: -1946902188
-      CREDITS_4: -146704988
       CREDITS_0: -1604118016
-      CREDITS_9: 697525584
+      CREDITS_1: -1946902188
       CREDITS_10: -1883842409
-      CREDITS_7: 2005055682
+      CREDITS_11: -1744906842
       CREDITS_2: 1782292647
-  spritePackingTag: 
+      CREDITS_3: -1243153570
+      CREDITS_4: -146704988
+      CREDITS_5: -2049739215
+      CREDITS_6: -635655906
+      CREDITS_7: 2005055682
+      CREDITS_8: -630585395
+      CREDITS_9: 697525584
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

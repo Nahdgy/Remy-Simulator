@@ -7,22 +7,21 @@ using UnityEngine.SceneManagement;
 public class Button : MonoBehaviour
 {
     [SerializeField]
-    private GameObject baseUI, difficultyUI;
-    [SerializeField]
     private UI ui;
     [SerializeField]
     private float easy, normal, difficult;
 
+    private void Awake()
+    {
+        ui = GameObject.FindObjectOfType<UI>();
+    }
     public void PlayButton()
     {
-        baseUI.SetActive(false);
-        difficultyUI.SetActive(true);
-
+        SceneManager.LoadScene("Difficulty");
     }
     public void RetourButton()
     {
-        baseUI.SetActive(true);
-        difficultyUI.SetActive(false);
+        SceneManager.LoadScene("MainMenu");
     }
     public void QuitButton()
     {
@@ -47,5 +46,10 @@ public class Button : MonoBehaviour
     public void MenuButton()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credit");
     }
 }
