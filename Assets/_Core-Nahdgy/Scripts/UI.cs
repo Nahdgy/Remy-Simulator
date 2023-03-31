@@ -13,8 +13,14 @@ public class UI : MonoBehaviour
     public float countStart, currentTime;
     [SerializeField]
     private Text timer;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     private void Start()
     {
+        timer = GameObject.FindObjectOfType<Text>();
         currentTime = countStart;
     }
     private void Update()
@@ -38,8 +44,8 @@ public class UI : MonoBehaviour
         }
     }
 
-   
-   
+
+
     public void WinScene()
     {
         SceneManager.LoadScene("Win");

@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseUI: {fileID: 1038367787}
   difficultyUI: {fileID: 1853445408}
-  ui: {fileID: 1154518688}
+  ui: {fileID: 0}
   easy: 120
   normal: 60
   difficult: 30
@@ -1649,7 +1649,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1154518687
+--- !u!1 &1116075317
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1657,22 +1657,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1154518689}
-  - component: {fileID: 1154518688}
+  - component: {fileID: 1116075319}
+  - component: {fileID: 1116075318}
   m_Layer: 0
-  m_Name: timer
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1154518688
+--- !u!114 &1116075318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154518687}
+  m_GameObject: {fileID: 1116075317}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72479697e76c0a4695449a5524656e2, type: 3}
@@ -1681,15 +1681,15 @@ MonoBehaviour:
   countStart: 0
   currentTime: 0
   timer: {fileID: 0}
---- !u!4 &1154518689
+--- !u!4 &1116075319
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154518687}
+  m_GameObject: {fileID: 1116075317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -182.24823, y: 538.73914, z: 0}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

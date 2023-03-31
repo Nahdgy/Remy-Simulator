@@ -8,6 +8,8 @@ public class ActionZone : MonoBehaviour
     [SerializeField]
     private int _player = 6;
     [SerializeField]
+    private float _animTime;
+    [SerializeField]
     private bool _isInside, _palyerHere;
     [SerializeField]
     private Animator _animationZone;
@@ -23,6 +25,10 @@ public class ActionZone : MonoBehaviour
     public innventory _bagChek;
     [SerializeField]
     private ItemData _objData;
+    [SerializeField]
+    private RemyController _remyController;
+    [SerializeField]
+    private RemyCamera _remyCamera;
 
 
 
@@ -59,8 +65,8 @@ public class ActionZone : MonoBehaviour
 
                 if(Input.GetButton("Action"))
                 {
-                    _UI.SetActive(false);
-                    _remyRb.isKinematic = true;
+                    StartCoroutine(Animation());
+                    _UI.SetActive(false);   
                     _animationZone.PlayInFixedTime(_animName);
                 }
         }
@@ -78,6 +84,19 @@ public class ActionZone : MonoBehaviour
             Debug.Log("L'objet est dans l'inventaire");
             _isInside = true;
         }
+
+    }
+
+    private IEnumerator Animation()
+    {
+        _remyRb.isKinematic = true;
+        _remyController._canMove = false;
+        _remyCamera._canSee = false;
+        yield return new WaitForSeconds(_animTime);
+        _remyRb.isKinematic = false;
+        _remyController._canMove = true;
+        _remyCamera._canSee = true;
+
 
     }
 }

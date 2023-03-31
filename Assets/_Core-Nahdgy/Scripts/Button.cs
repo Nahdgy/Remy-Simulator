@@ -12,6 +12,7 @@ public class Button : MonoBehaviour
     private UI ui;
     [SerializeField]
     private float easy = 120, normal = 60, difficult = 30;
+
     public void PlayButton()
     {
         baseUI.SetActive(false);
