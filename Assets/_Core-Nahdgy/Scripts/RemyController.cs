@@ -5,12 +5,13 @@ using UnityEngine;
 public class RemyController : MonoBehaviour
 {
     [SerializeField]
-    private float _moveSpeed, _runSpeed, _jumpForce, _playerHeight,_speedDrag,_moveMultiplier,_climbSpeed,_dashDuration, _initialSpeed;
+    private float _moveSpeed, _runSpeed, _jumpForce, _playerHeight = 2,_speedDrag,_moveMultiplier,_climbSpeed,_dashDuration, _initialSpeed;
     private float _horizontalInput,_jumpCooldown,_verticalInput, _jumpInput ;
     public float _gravityMultiplier;
     [SerializeField]
     private bool _isGrounded,_canJump, _canClimb;
-    
+    public bool _canMove = true;
+
     [SerializeField]
     private int _ladder = 7;
    
@@ -48,7 +49,7 @@ public class RemyController : MonoBehaviour
         _horizontalInput = Input.GetAxisRaw("Horizontal");
         _verticalInput = Input.GetAxisRaw("Vertical");
         
-        if (Input.GetButtonDown("Jump") && _canJump && _isGrounded )
+        if (Input.GetButtonDown("Jump") && _canJump && _isGrounded && _canMove == true)
         {
           _canJump = false;
            Jump();
@@ -87,9 +88,17 @@ public class RemyController : MonoBehaviour
     }
     void Move()
     {
-        _moveDirection = _oriantation.forward * _verticalInput + _oriantation.right * _horizontalInput;
-        if (_isGrounded) _rb.AddForce(_moveDirection.normalized * _moveSpeed, ForceMode.Force);
-        else if (!_isGrounded) _rb.AddForce(_moveDirection.normalized * _moveSpeed * _moveMultiplier, ForceMode.Force);
+        if(_canMove)
+        {  
+         _moveDirection = _oriantation.forward * _verticalInput + _oriantation.right * _horizontalInput;
+            if (_isGrounded)
+            {
+                _rb.AddForce(_moveDirection.normalized * _moveSpeed, ForceMode.Force);
+            }
+            else if(!_isGrounded) _rb.AddForce(_moveDirection.normalized * _moveSpeed * _moveMultiplier, ForceMode.Force);
+        
+        }
+       
     }
 
     void SetDrag()
