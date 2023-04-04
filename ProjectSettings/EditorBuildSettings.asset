@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Core-Nahdgy/MainMenu.unity
+    guid: dc8fbefd822874e40a1fff59fe1c3800
+  - enabled: 1
+    path: Assets/_Core-Nahdgy/Credit.unity
+    guid: e677de74522352743ab10e37da5205af
+  - enabled: 1
     path: Assets/Scenes/Nahdgy_Scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/_Core-Nahdgy/Win.unity
+    guid: 60546a05b910b6f40a551b4284cb2dbc
+  - enabled: 1
+    path: Assets/_Core-Nahdgy/GameOver.unity
+    guid: 08f91d5201fe1f049b5bef653e573c06
+  - enabled: 1
+    path: Assets/_Core-Nahdgy/Difficulty.unity
+    guid: e19b13ba1f687df4ea2d41b30e259253
   m_configObjects: {}

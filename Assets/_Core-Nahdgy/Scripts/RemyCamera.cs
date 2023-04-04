@@ -14,6 +14,7 @@ public class RemyCamera : MonoBehaviour
     [SerializeField]
     private GameObject _picUpUI;
     public ItemBehavior _pickUp;
+    public bool _canSee = true;
 
 
 
@@ -26,14 +27,19 @@ public class RemyCamera : MonoBehaviour
 
     void GetMouseInput()
     {
-        float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * _mouseSensibilityX;
-        float _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * _mouseSensibilityY;
-        _cameraRotationY += _mouseX;
-        _cameraRotationX -= _mouseY;
-        _cameraRotationX = Mathf.Clamp(_cameraRotationX, -90f, 90f);
+        if(_canSee == true)
+        {
+            float _mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * _mouseSensibilityX;
+            float _mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * _mouseSensibilityY;
+            _cameraRotationY += _mouseX;
+            _cameraRotationX -= _mouseY;
+            _cameraRotationX = Mathf.Clamp(_cameraRotationX, -90f, 90f);
 
-        transform.rotation = Quaternion.Euler(_cameraRotationX, _cameraRotationY, 0);
-        _oriantationCam.rotation = Quaternion.Euler(0, _cameraRotationY, 0);
+            transform.rotation = Quaternion.Euler(_cameraRotationX, _cameraRotationY, 0);
+            _oriantationCam.rotation = Quaternion.Euler(0, _cameraRotationY, 0);
+
+        }
+        
     }
     private void ObjectTargeted()
     {
