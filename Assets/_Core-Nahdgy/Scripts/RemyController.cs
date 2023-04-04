@@ -74,7 +74,7 @@ public class RemyController : MonoBehaviour
     }
     void GroundCheck()
     {
-        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight * .5f + .2f, _whatIsGround);
+        _isGrounded = Physics.Raycast(transform.position, Vector3.down, _playerHeight * .5f + Physics.defaultContactOffset, _whatIsGround);
     }
     void Jump()
     {

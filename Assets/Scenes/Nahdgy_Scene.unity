@@ -22619,6 +22619,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1686143665709322848, guid: 5021302859150bf478db6fae2daa1b5c,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1686143665709322863, guid: 5021302859150bf478db6fae2daa1b5c,
         type: 3}
       propertyPath: _picUpUI
