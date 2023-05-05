@@ -12,10 +12,14 @@ public class CagetteWin : MonoBehaviour
     [SerializeField] 
     private int obj = 9;
 
-
+    private void Start()
+    {
+         winning = FindObjectOfType<UI>().GetComponent<UI>();
+    }
     private void Update()
     {
         GotVegetables();
+       
     }
     private void OnTriggerEnter(Collider other)
     {

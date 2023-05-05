@@ -890,12 +890,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3a28211cf86f9469cd4e34dfdca776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseUI: {fileID: 0}
-  difficultyUI: {fileID: 70172127}
   ui: {fileID: 0}
-  easy: 120
-  normal: 60
-  difficult: 30
+  easy: 270
+  normal: 210
+  difficult: 100
 --- !u!4 &1055808126
 Transform:
   m_ObjectHideFlags: 0

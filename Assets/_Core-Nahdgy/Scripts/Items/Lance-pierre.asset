@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Lance-pierre
   _visual: {fileID: -938820701, guid: 6ad3081d18d6415438b6b3d68a3d9edc, type: 3}
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 9089147160986055167, guid: 98e0be454a917ff44a38ec5afaa14269, type: 3}

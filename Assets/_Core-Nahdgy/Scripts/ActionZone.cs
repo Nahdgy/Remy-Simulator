@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class ActionZone : MonoBehaviour
@@ -18,11 +18,12 @@ public class ActionZone : MonoBehaviour
     [SerializeField]
     private ParticleSystem _particle;
     [SerializeField]
-    private GameObject _UI, _goPickUI;
+    private GameObject _UI, _goPickUI, zone;
     [SerializeField]
     private Rigidbody _remyRb;
 
     public innventory _bagChek;
+
     [SerializeField]
     private ItemData _objData;
     [SerializeField]
@@ -31,7 +32,7 @@ public class ActionZone : MonoBehaviour
     private RemyCamera _remyCamera;
 
 
-
+   
     private void Update()
     {
         InventoryChanges();
@@ -68,6 +69,7 @@ public class ActionZone : MonoBehaviour
                     StartCoroutine(Animation());
                     _UI.SetActive(false);   
                     _animationZone.PlayInFixedTime(_animName);
+                    zone.SetActive(false);
                 }
         }
 
